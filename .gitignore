@@ -1,0 +1,4 @@
+.awcache/
+.history/
+.node_modules/
+build/
