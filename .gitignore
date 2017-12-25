@@ -1,4 +1,5 @@
 .awcache/
 .history/
-.node_modules/
-build/
+node_modules/
+lib/
+.npmrc
