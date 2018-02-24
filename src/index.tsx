@@ -1,7 +1,7 @@
 // This import will be replaced with polyfill imports by babel-preset-env
 import "babel-polyfill";
 
-import * as React from "react";
+import React from "react";
 import { render } from "react-dom";
 
 import "assets/styles/main.scss";

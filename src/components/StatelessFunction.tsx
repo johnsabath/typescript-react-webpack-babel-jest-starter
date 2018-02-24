@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import conditionalClasses from "utils/conditionalClasses";
-
 type Props = {
   message: string;
 };

@@ -1,12 +1,13 @@
 import { shallow } from "enzyme";
-import * as React from "react";
-import * as renderer from "react-test-renderer";
+import React from "react";
+import renderer from "react-test-renderer";
 
 import StatefulClass from "components/StatefulClass";
 
 describe("<StatefulClass />", () => {
   it("Matches snapshot", () => {
     const tree = renderer.create(<StatefulClass />);
+    expect(tree).toMatchSnapshot();
   });
 
   it("Clicking the button increments the counter", () => {
