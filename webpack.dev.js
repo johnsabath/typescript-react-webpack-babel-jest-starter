@@ -8,10 +8,8 @@ const packageJson = require("./package.json");
 
 module.exports = merge(common, {
   cache: true,
+  mode: "development",
   devtool: "inline-source-map",
-  devServer: {
-    historyApiFallback: true
-  },
   plugins: [
     new webpack.DefinePlugin({
       "process.env": {
@@ -21,7 +19,6 @@ module.exports = merge(common, {
     }),
     new CircularDependencyPlugin(),
     new HtmlWebpackPlugin({
-      hash: true,
       template: "./index.ejs"
     })
   ]

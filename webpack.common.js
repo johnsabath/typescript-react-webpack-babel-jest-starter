@@ -1,15 +1,14 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const BUILD_DIR = path.resolve(__dirname, "lib");
 const APP_DIR = path.resolve(__dirname, "src");
 
 module.exports = {
-  entry: {
-    app: "index.tsx"
-  },
+  mode: "production",
+  entry: ["index.tsx"],
   resolve: {
     modules: [APP_DIR, "node_modules"],
     extensions: [".js", ".jsx", ".ts", ".tsx"]
@@ -25,15 +24,15 @@ module.exports = {
       {
         test: /\.tsx?$/,
         include: APP_DIR,
-        loaders: ["awesome-typescript-loader?useBabel&useCache&silent"]
+        loaders: [
+          { loader: "babel-loader" },
+          { loader: "ts-loader", options: { transpileOnly: true } }
+        ]
       },
       {
         test: /\.scss$/,
         include: APP_DIR,
-        use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: ["css-loader", "sass-loader"]
-        })
+        use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.(png|jpe?g|gif|ico)(\?\S*)?$/,
@@ -53,6 +52,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(["lib"], { verbose: false }),
-    new ExtractTextPlugin("[hash].styles.css")
+    new ForkTsCheckerWebpackPlugin()
   ]
 };

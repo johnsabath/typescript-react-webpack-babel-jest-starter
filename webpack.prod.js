@@ -14,7 +14,6 @@ const prodPlugins = [
     }
   }),
   new webpack.optimize.OccurrenceOrderPlugin(false),
-  new webpack.optimize.UglifyJsPlugin(),
   new webpack.optimize.AggressiveMergingPlugin(),
   new CompressionPlugin({
     asset: "[path].gz[query]",
@@ -31,7 +30,6 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      hash: true,
       template: "./index.ejs"
     })
   ].concat(prodPlugins)
