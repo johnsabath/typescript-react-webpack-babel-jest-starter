@@ -35,18 +35,13 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.(png|jpe?g|gif|ico)(\?\S*)?$/,
+        test: /\.(png|jpe?g|gif|ico|svg)(\?\S*)?$/,
         include: APP_DIR,
         use: [
           {
             loader: "file-loader"
           }
         ]
-      },
-      {
-        test: /\.svg$/,
-        include: APP_DIR,
-        loader: "svg-inline-loader?classPrefix"
       }
     ]
   },

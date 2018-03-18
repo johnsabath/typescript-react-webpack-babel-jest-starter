@@ -4,8 +4,8 @@
       "env",
       {
         "targets": {
-          "ie": 9,
-          "browsers": "> 1%"
+          "browsers": "> 1%",
+          "uglify": true
         },
         "useBuiltIns": true,
         "modules": false
