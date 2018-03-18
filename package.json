@@ -67,6 +67,7 @@
     ]
   },
   "jest": {
+    "roots": ["tests"],
     "setupFiles": [
       "raf/polyfill"
     ],
