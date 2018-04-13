@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 
-import StatelessFunction from "components/StatelessFunction";
+import StatelessFunction from "components/StatelessFunction/StatelessFunction";
 
 describe("<StatelessFunction />", () => {
   it("Matches snapshot", () => {

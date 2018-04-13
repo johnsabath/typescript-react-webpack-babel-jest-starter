@@ -4,9 +4,8 @@ import "babel-polyfill";
 import React from "react";
 import { render } from "react-dom";
 
-import "assets/styles/main.scss";
 import StatefulClassComponent from "components/StatefulClass";
-import StatelessFunctionComponent from "components/StatelessFunction";
+import StatelessFunctionComponent from "components/StatelessFunction/StatelessFunction";
 
 render(
   <div>

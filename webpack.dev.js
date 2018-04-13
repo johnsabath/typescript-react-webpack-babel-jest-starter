@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const merge = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CircularDependencyPlugin = require("circular-dependency-plugin");
 
 const common = require("./webpack.common.js");
@@ -17,9 +16,6 @@ module.exports = merge(common, {
         APP_VERSION: JSON.stringify(packageJson.version)
       }
     }),
-    new CircularDependencyPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./index.ejs"
-    })
+    new CircularDependencyPlugin()
   ]
 });
